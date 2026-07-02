@@ -55,11 +55,11 @@ jobs:
           
           # Spin up the fresh container on Host Port 8082 mapping cleanly to internal 8080
           # Change --name apigw-container to --name api-gateway-container to keep things consistent
-	  docker run -d --name api-gateway-container \
-  	  --add-host eureka-server-01:192.168.237.130 \
-  	  -p 8080:8080 \
-  	  -e EUREKA_INSTANCE_PREFER_IP_ADDRESS=true \
-  	  -e EUREKA_INSTANCE_IP_ADDRESS=192.168.237.131 \
-  	  --restart always \
-  	  ${{ secrets.DOCKERHUB_USERNAME }}/api-gateway:latest
+          docker run -d --name api-gateway-container \
+          --add-host eureka-server-01:192.168.237.130 \
+          -p 8080:8080 \
+          -e EUREKA_INSTANCE_PREFER_IP_ADDRESS=true \
+          -e EUREKA_INSTANCE_IP_ADDRESS=192.168.237.131 \
+          --restart always \
+          ${{ secrets.DOCKERHUB_USERNAME }}/api-gateway:latest
         EOF
