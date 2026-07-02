@@ -1,0 +1,26 @@
+# --- Target and Compilation Build Artifacts ---
+target/
+*.jar
+*.war
+*.ear
+
+# --- IntelliJ IDEA Local Settings ---
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# --- macOS System Files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# --- Help Files & Logs ---
+HELP.md
+*.log
+logs/
+
+# --- Build System Wrapper Local Storage ---
+.mvn/wrapper/maven-wrapper.jar
