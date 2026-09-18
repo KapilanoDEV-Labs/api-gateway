@@ -66,3 +66,13 @@ sequenceDiagram
 | **`api-gateway`** | `8080` | `http://localhost:8080/` *(Central Entry Point)* |
 | **`quiz-service`** | `8080` | `http://localhost:8080/quiz-service/**` |
 | **`question-service`** | `8080` | `http://localhost:8080/question-service/**` |
+
+## Security Configuration
+
+The API Gateway is secured using **Spring Security (WebFlux)** to protect backend microservices from unauthorized access.
+
+### What Was Configured:
+* **Public Endpoints:** Health checks and monitoring routes under `/actuator/**` are open to everyone so system tools can monitor the service.
+* **Protected Routes:** All other microservice routes require valid login credentials.
+* **Authentication Method:** Uses **HTTP Basic Authentication** with BCrypt password encoding for secure login.
+* **CSRF Protection:** Disabled on the Gateway to allow stateless API calls from clients and services.
